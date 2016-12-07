@@ -1123,6 +1123,21 @@ Garden.prototype.grow= function(){
  *
  */
 
+ class Shape{
+
+  constructor(sides){
+  if(sides >= 3){
+    this.sides = sides;
+  }else{
+    this.sides= null;
+  }
+
+  }
+
+
+ }
+
+
 
 /**
  * Step 53
@@ -1132,6 +1147,12 @@ Garden.prototype.grow= function(){
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
 
+class Box{
+  constructor(contents, isOpen){
+    this.contents= {};
+    this.isOpen = contents;
+  }
+}
 
 /**
  * Step 54
@@ -1139,6 +1160,16 @@ Garden.prototype.grow= function(){
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
+
+
+ class Door{
+  constructor(isOpen){
+    this.isOpen= isOpen;
+
+
+  } 
+
+}
 
 
 /**
@@ -1150,12 +1181,26 @@ Garden.prototype.grow= function(){
  */
 
 
+ class Shoe{
+  constructor(size, color){
+    this.size= size;
+    this.color= color;
+  }
+ }
+
+
 /**
  * Step 56
  *
  * House class
  * @param {number} stories How many stories tall the house is
  */
+
+ class House{
+  constructor(stories){
+    this.stories = stories;
+  }
+ }
 
 
 /**
@@ -1165,6 +1210,11 @@ Garden.prototype.grow= function(){
  * @param {boolean} isOn Whether the light is on or off
  */
 
+class Lightbulb{
+  constructor(isOn){
+    this.isOn = isOn;
+  }
+}
 
 /**
  * Step 58
@@ -1174,12 +1224,28 @@ Garden.prototype.grow= function(){
  */
 
 
+ class Cookie{
+  constructor(flavor){
+    this.flavor = flavor;
+  }
+ }
+
+
+
+
+
 /**
  * Step 59
  *
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
+
+ class Meal{
+  constructor(foods){
+    this.foods = foods;
+  }
+ }
 
 
 /**
