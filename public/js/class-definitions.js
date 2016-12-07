@@ -385,6 +385,25 @@ var domains = {
  *
  */
 
+ function drink(beerType){
+  if(beerType in beers){
+    if(typeof beers[beerType] === 'object'){
+       return 'This ' + beerType + ' is ' + beers[beerType][0] + ' and ' + beers[beerType][1] + ' .';
+    }
+
+    if(typeof beers[beerType] === 'string'){
+      return 'This ' + beerType + ' is ' + beers[beerType] + ' .';
+
+    }
+
+  }else{
+    return false;
+  }
+
+
+
+ }
+
 
 /* Step 24
  *
