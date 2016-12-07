@@ -503,7 +503,7 @@ var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
  *
  */
 
-class Person {
+/*class Person {
   constructor(name, money, age, gender){
     this.name = name;
     this.money = money;
@@ -523,7 +523,25 @@ class Person {
   }
 
 
+} */
+
+function Person(name, money, age, gender){
+ this.name= name;
+ this.money = money;
+ this.age = age;
+ this.gender = gender;
+
 }
+
+Person.prototype.spendMoney= function(amount){
+  return this.money -= amount;
+
+};
+
+Person.prototype.earnMoney= function(amount){
+  return this.money += amount;
+
+};
 
 /* Step 28
  *
@@ -590,6 +608,16 @@ class Person {
  *   write
  *
  */
+
+function Pen(color){
+  this.color = color;
+}
+
+Pen.prototype.write = function(message){
+  return this.color + ': ' + message;
+
+};
+
 
 
 /* Step 31
