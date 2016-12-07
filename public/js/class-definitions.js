@@ -540,7 +540,6 @@ class Person {
 
 
  function purchaseLaptop(laptop){
-  var returnNum = -1;
   if(laptop in laptopCosts){
     return laptopCosts[laptop].toString();
   }else{
@@ -560,6 +559,15 @@ class Person {
  * @return {Bool}
  *
  */
+
+ function canTalkAbout(club){
+  if(club === club_name){
+    return false;
+  }else{
+    return true;
+  }
+
+ }
 
 
 /* Step 30
