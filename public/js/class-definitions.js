@@ -787,6 +787,21 @@ Garden.prototype.grow= function(){
  */
 
 
+ function Stapler(color, maxPapers){
+  this.color = color;
+  this.maxPapers = maxPapers;
+ }
+
+ Stapler.prototype.staplePapers= function(papers){
+  if(papers <= this.maxPapers){
+    return true;
+  }else{
+    return false;
+  }
+
+ };
+
+
 /* Step 35
  *
  * Define an ES5 class named "Scientist" that extends the Person Class that takes
