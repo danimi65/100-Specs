@@ -1149,8 +1149,8 @@ Garden.prototype.grow= function(){
 
 class Box{
   constructor(contents, isOpen){
-    this.contents= {};
-    this.isOpen = contents;
+    this.contents= contents;
+    this.isOpen = isOpen;
   }
 }
 
@@ -1255,44 +1255,55 @@ class Lightbulb{
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george= new Animal('Monkey', 'male');
+
+
+var nemo= new Animal('Fish', 'male');
 
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle('Honda', 'Civic');
+
+
+var forte = new Vehicle('KIA', 'Forte');
+
 
 // Create 2 shapes with different numbers of sides
-var square;
-var hexagon;
+var square = new Shape(4);
+
+
+
+var hexagon= new Shape(6);
+
 
 // Create 2 boxes
-var catBox;
-var christmasPresent;
+var catBox= new Box( new Animal('Cat', 'female'), true);
+
+
+var christmasPresent = new Box('Clothes', false);
 
 // Create 2 doors
-var automaticDoor;
-var bankVault;
+var automaticDoor = new Door(true);
+var bankVault = new Door(false);
 
 // Create 2 shoes
-var rubySlippers;
-var dressShoes;
+var rubySlippers= new Shoe(7, 'red');
+var dressShoes = new Shoe(10, 'black');
 
 // Create 2 houses
-var singleStory;
-var twoStory;
+var singleStory= new House(1);
+var twoStory= new House(2);
 
 // Create 2 lightbulbs
-var incandescent;
-var halogen;
+var incandescent= new Lightbulb(true);
+var halogen= new Lightbulb(false);
 
 // Create 2 cookies of different flavors
-var chocolateChip;
-var gingerbread;
+var chocolateChip = new Cookie('chocolate');
+var gingerbread= new Cookie('gingerbread');
 
 // Create 2 different meals
-var breakfast;
-var dinner;
+var breakfast = new Meal('cereal and milk');
+var dinner = new Meal('fish and vegetables');
 
 
  /* Steps 81 to 90
@@ -1317,6 +1328,22 @@ var dinner;
  *
  */
 
+ Animal.prototype.isWarmBlooded = function(){
+  if(this.species === 'Fish'){
+    return false;
+
+  } 
+  if(this.species === 'Monkey'){
+    return true;
+  }
+  if(this.species === 'Bird'){
+    return true;
+  } else{
+    return "Could not determine if warm-blooded";
+  }
+
+ };
+
 
 /* Step 82
  *
@@ -1325,6 +1352,14 @@ var dinner;
  * return "Driving on {streetName}", else return "Driving forward".
  *
  */
+
+ Vehicle.prototype.drive = function(streetName){
+  if(typeof(streetName) === 'string' && streetName !== ' '){
+    return "Driving on " + streetName;
+  }else{
+    return "Driving forward";
+  }
+ };
 
 
  /* Step 83
@@ -1344,6 +1379,43 @@ var dinner;
  * Any other number => "Could not determine type"
  *
  */
+
+ Shape.prototype.getType = function(){
+  if(this.sides === 3){
+    return 'triangle';
+  }
+  if(this.sides === 4){
+    return 'quadrilateral';
+  }
+
+  if(this.sides === 5){
+    return 'pentagon';
+  }
+  if(this.sides === 6){
+    return 'hexagon';
+  }
+  if(this.sides === 7){
+    return 'heptagon';
+  }
+
+  if(this.sides === 8){
+    return 'octagon';
+  }
+
+  if(this.sides === 9){
+    return 'nonagon';
+  }
+
+  if(this.sides === 10){
+    return 'decagon';
+  } else{
+    return 'Could not determine type';
+  }
+
+
+
+
+ };
 
 
 /* Step 84
