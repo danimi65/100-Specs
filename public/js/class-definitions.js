@@ -468,6 +468,7 @@ var domains = {
  * @return {String}
  *
  */
+
 var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
  function favoritePlanet(favPlanet){
   if(planets.indexOf(favPlanet) !== -1){
@@ -502,6 +503,27 @@ var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
  *
  */
 
+class Person {
+  constructor(name, money, age, gender){
+    this.name = name;
+    this.money = money;
+    this.age= age;
+    this.gender = gender;
+  }
+
+
+  spendMoney(amount){
+    return this.money = this.money - amount;
+
+  }
+
+  earnMoney(amount){
+    return this.money = this.money + amount;
+
+  }
+
+
+}
 
 /* Step 28
  *
