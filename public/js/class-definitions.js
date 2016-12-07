@@ -211,6 +211,8 @@ var domains = {
  *
  */
 
+ var linuxFlavors= ["Gentoo","Fedora", "Debian", "Slackware", "Red Hat", "Bieber Linux"];
+
 
 /* Step 15
  *
@@ -225,6 +227,8 @@ var domains = {
  *
  */
 
+ var DNA = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
+
 
 /* Step 16
  *
@@ -237,6 +241,13 @@ var domains = {
  * Surface      => 320
  *
  */
+
+ var laptopCosts = {
+  MacBook: 1500,
+  Alienware: 2500,
+  HP: 499,
+  Surface: 320  
+ };
 
 
 /* Step 17
@@ -254,6 +265,8 @@ var domains = {
  *
  */
 
+ var livingOrganismClassification = ['Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus', 'Species'];
+
 
 /* Step 18
  *
@@ -267,6 +280,8 @@ var domains = {
  * "cvs"
  *
  */
+
+ var scmList = ['git', 'svn', 'mercurial', 'bazaar', 'cvs'];
 
 
 /* Step 19
@@ -287,6 +302,16 @@ var domains = {
  *
  */
 
+ var beers= {
+  IPA: 'Ale',
+  Lager: 'Strong',
+  Heffeweisen: 'German',
+  Stout: ['Thick', 'Dark'],
+  Porter: 'Bitter',
+  Ale: ['Light', 'Golden']
+
+ };
+
 
 /* Step 20
  *
@@ -296,6 +321,10 @@ var domains = {
  * @return {String}
  *
  */
+
+ function sahara_river(){
+  return 'Nile River';
+ }
 
 
 /* Step 21
@@ -309,6 +338,12 @@ var domains = {
  *
  */
 
+ function addNumbers(x, y){
+   
+  return x + y;
+
+ }  
+
 
 /* Step 22
  *
@@ -321,6 +356,15 @@ var domains = {
  * @return {Bool}
  *
  */
+
+
+ function installLinux(str){
+  if(linuxFlavors.indexOf(str) !== -1){
+    return true;
+  }else{
+    return false;
+  }
+ }
 
 
 /* Step 23
