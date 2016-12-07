@@ -182,6 +182,21 @@ var domains = {
  */
 
 
+ var rainbow = {
+
+ colors: {
+  red: "#F0280A",
+  orange: "#FF8800",
+  yellow: "#FFDD00",
+  green: "#51AB0C",
+  blue: "#1593ED",
+  indigo: "#5215ED",
+  violet: "#A915ED" },
+
+ isDouble: true
+ };
+
+
 /* Step 14
  *
  * Declare an array named "linuxFlavors"
