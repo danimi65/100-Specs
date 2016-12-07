@@ -417,6 +417,14 @@ var domains = {
  *
  */
 
+ function browseURL(browserType){
+  if(browserType in browsers){
+    return browsers[browserType];
+  }else{
+    return false;
+  }
+ }
+
 
 /* Step 25
  *
@@ -427,6 +435,18 @@ var domains = {
  * @return {String}
  *
  */
+
+ function listLivingOrgClass(){
+  var createUl = document.createElement('ul');
+  for(var i = 0; i < livingOrganismClassification.length; i++){
+    var createLi = document.createElement('li');
+    createLi.innerHTML = livingOrganismClassification[i];
+    createUl.append(createLi);
+  }
+
+  return createUl.outerHTML;
+
+ }
 
 
 /* Step 26
@@ -448,6 +468,15 @@ var domains = {
  * @return {String}
  *
  */
+var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
+ function favoritePlanet(favPlanet){
+  if(planets.indexOf(favPlanet) !== -1){
+    return 'I\'m from ' + favPlanet + ', but I wish I could go to ' + randomPlanet + '. ';
+
+  }else{
+    return favPlanet + ' is not a planet!';
+  }
+ }
 
 
 /* Step 27
