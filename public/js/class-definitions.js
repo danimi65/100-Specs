@@ -538,6 +538,17 @@ class Person {
  */
 
 
+
+ function purchaseLaptop(laptop){
+  var returnNum = -1;
+  if(laptop in laptopCosts){
+    return laptopCosts[laptop].toString();
+  }else{
+    return -1;
+  }
+ }
+
+
 /* Step 29
  *
  * Define a function named "canTalkAbout" that takes
