@@ -688,6 +688,20 @@ Garden.prototype.grow= function(){
  */
 
 
+ function SolarSystem(){
+  this.planets = [];
+ }
+
+ SolarSystem.prototype.addPlanet= function(planet){
+  return this.planets.push(planet);
+
+ };
+
+ SolarSystem.prototype.removePlanet = function(planet){
+  return this.planets.pop(planet);
+ };
+
+
 /* Step 33
  *
  * Define an ES5 class named "PrincessLeia" that is a subclass of "Person"
