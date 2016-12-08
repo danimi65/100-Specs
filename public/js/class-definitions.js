@@ -873,20 +873,21 @@ Garden.prototype.grow= function(){
  Scientist.prototype.addDiscovery= function(discovery){
   this.discoveries.push(discovery);
 
-
-    if(this.discoveries.length === 0 ){
-
+  switch(true){
+    case this.discoveries.length === 1:
       return "I discovered " + this.discoveries[0] + ". ";
-    }
 
-    else if(this.discoveries.length === 1){
+    case this.discoveries.length === 2:
       return "I discovered " + this.discoveries[0] + " and " + this.discoveries[1] +  ". ";
 
-    }
+    case this.discoveries.length === 3:
+      return "I discovered " + this.discoveries[0] + ", " + this.discoveries[1] + ", and " + this.discoveries[2] + ". ";
 
-    else if(this.discoveries.length === 2){
-      return "I discovered " + this.discoveries[0] + ", " + this.discoveries[1] + " and " + this.discoveries[2] + ". ";
-    }
+    default: return false;
+    
+
+
+  }
   
 
   
@@ -1427,6 +1428,16 @@ var dinner = new Meal('fish and vegetables');
  *
  */
 
+ Box.prototype.openBox= function(){
+  if(this.isOpen === false){
+   this.isOpen = true;
+   return true;
+  }else{
+    return false;
+  }
+
+ };
+
 
  /* Step 85
  *
@@ -1436,6 +1447,19 @@ var dinner = new Meal('fish and vegetables');
  *
  */
 
+ Door.prototype.openClose = function(){
+  if(this.isOpen === false){
+    this.isOpen = true;
+    return true;
+  }
+  if(this.isOpen === true){
+    this.isOpen = false;
+    return false;
+  }
+  
+
+ };
+
 
 /* Step 86
  *
@@ -1444,6 +1468,10 @@ var dinner = new Meal('fish and vegetables');
  *
  */
 
+Shoe.prototype.findShoes = function(){
+  return "Found " + this.color + " shoes of size " + this.size;
+
+};
 
  /* Step 87
  *
@@ -1453,6 +1481,15 @@ var dinner = new Meal('fish and vegetables');
  * storiesTooTall, return true, else return false.
  *
  */
+
+ House.prototype.isATallStory= function(storiesTooTall){
+  if(this.stories >= storiesTooTall){
+    return true;
+  }else{
+    return false;
+  }
+
+ };
 
 
  /* Step 88
@@ -1465,6 +1502,17 @@ var dinner = new Meal('fish and vegetables');
  *
  */
 
+ Lightbulb.prototype.flipSwitch= function(on){
+  if(on === 'on'){
+    this.isOn = true;
+    return true;
+  }else{
+    this.isOn= false;
+    return false;
+  }
+
+ }
+
 
  /* Step 89
  *
@@ -1473,6 +1521,15 @@ var dinner = new Meal('fish and vegetables');
  * and the dayOfTheWeek is "Monday", return true.  Else return false.
  *
  */
+
+ Cookie.prototype.swipedByCookieMonster = function(dayOfTheWeek){
+  if(this.flavor === 'chocolate' && dayOfTheWeek === 'Monday'){
+    return true;
+  }else{
+    return false;
+  }
+
+ };
 
 
  /* Step 90
@@ -1495,6 +1552,18 @@ var dinner = new Meal('fish and vegetables');
  * Call methods
  *
  */
+
+ Meal.prototype.containsJunkFood = function(){
+ var junkFood= ["chips", "soda", "ice cream", "popcorn", "candy"];
+ for(var i = 0; i < this.foods.length; i++){
+  if(junkFood in this.foods){
+    return true;
+  }else{
+    return false;
+  }
+ }
+
+ };
 
 
 /* Step 91
