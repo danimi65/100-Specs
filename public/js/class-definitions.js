@@ -1355,7 +1355,7 @@ var dinner = new Meal('fish and vegetables');
  */
 
  Vehicle.prototype.drive = function(streetName){
-  if(typeof(streetName) === 'string' && streetName !== ' '){
+  if(typeof streetName === 'string' && streetName !== ''){
     return "Driving on " + streetName;
   }else{
     return "Driving forward";
@@ -1511,7 +1511,7 @@ Shoe.prototype.findShoes = function(){
     return false;
   }
 
- }
+ };
 
 
  /* Step 89
@@ -1555,8 +1555,8 @@ Shoe.prototype.findShoes = function(){
 
  Meal.prototype.containsJunkFood = function(){
  var junkFood= ["chips", "soda", "ice cream", "popcorn", "candy"];
- for(var i = 0; i < this.foods.length; i++){
-  if(junkFood in this.foods){
+ for(var i = 0; i < junkFood.length; i++){
+  if(this.foods.indexOf(junkFood[i]) > -1){
     return true;
   }else{
     return false;
@@ -1572,9 +1572,14 @@ Shoe.prototype.findShoes = function(){
  * and assign the values to each variable below.
  *
  */
-var warmBloodedAnimal;
-var coldBloodedAnimal;
-var notWarmOrColdAnimal;
+var warmBloodedAnimal = new Animal('Monkey', 'male').isWarmBlooded();
+
+
+
+
+
+var coldBloodedAnimal= new Animal('Fish', 'male').isWarmBlooded();
+var notWarmOrColdAnimal= new Animal('Dog', 'female').isWarmBlooded();
 
 
 /* Step 92
@@ -1583,8 +1588,8 @@ var notWarmOrColdAnimal;
  * and assign the values to each variable below.
  *
  */
-var streetDriving;
-var forwardDriving;
+var streetDriving = new Vehicle('Honda', 'Civic').drive('Pearl City');
+var forwardDriving = new Vehicle('Toyota', 'Highlander').drive(false);
 
 
  /* Step 93
@@ -1593,8 +1598,8 @@ var forwardDriving;
  * and assign the values to each variable below.
  *
  */
-var decagon;
-var polygon;
+var decagon = new Shape(10).getType();
+var polygon = new Shape(undefined).getType();
 
 
 /* Step 94
@@ -1603,8 +1608,8 @@ var polygon;
  * and assign the values to each variable below.
  *
  */
-var openAClosedBox;
-var closeAnOpenBox;
+var openAClosedBox= new Box("candy", false).openBox();
+var closeAnOpenBox = new Box('clothes', true).openBox();
 
 
  /* Step 95
@@ -1613,8 +1618,8 @@ var closeAnOpenBox;
  * and assign the values to each variable below.
  *
  */
-var openAClosedDoor;
-var closeAnOpenDoor;
+var openAClosedDoor= new Door(false).openClose();
+var closeAnOpenDoor= new Door(true).openClose();
 
 
 /* Step 96
@@ -1623,8 +1628,8 @@ var closeAnOpenDoor;
  * and assign the values to each variable below.
  *
  */
-var redShoesSize7;
-var blackShoesSize10;
+var redShoesSize7 = new Shoe(7, 'red').findShoes();
+var blackShoesSize10= new Shoe(10, 'black').findShoes();
 
 
  /* Step 97
@@ -1633,8 +1638,8 @@ var blackShoesSize10;
  * and assign the values to each variable below.
  *
  */
-var farTooTallAStory;
-var shortStory;
+var farTooTallAStory= new House(30).isATallStory(30);
+var shortStory= new House(1).isATallStory(30);
 
 
  /* Step 98
@@ -1643,8 +1648,8 @@ var shortStory;
  * and assign the values to each variable below.
  *
  */
-var kitchenLightsOn;
-var porchLightsOff;
+var kitchenLightsOn= new Lightbulb(true).flipSwitch('on');
+var porchLightsOff= new Lightbulb(false).flipSwitch(false);
 
 
  /* Step 99
@@ -1653,8 +1658,8 @@ var porchLightsOff;
  * and assign the values to each variable below.
  *
  */
-var cookieMonsterPwns;
-var cookieMonsterBlocked;
+var cookieMonsterPwns= new Cookie('chocolate').swipedByCookieMonster('Monday');
+var cookieMonsterBlocked= new Cookie('gingerbread').swipedByCookieMonster('');
 
 
  /* Step 100
@@ -1663,5 +1668,5 @@ var cookieMonsterBlocked;
  * and assign the values to each variable below.
  *
  */
-var badForYou;
-var goodForYou;
+var badForYou= new Meal('candy').containsJunkFood();
+var goodForYou=  new Meal('carrot').containsJunkFood();
