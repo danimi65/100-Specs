@@ -1553,17 +1553,17 @@ Shoe.prototype.findShoes = function(){
  *
  */
 
- Meal.prototype.containsJunkFood = function(){
- var junkFood= ["chips", "soda", "ice cream", "popcorn", "candy"];
- for(var i = 0; i < junkFood.length; i++){
-  if(this.foods.indexOf(junkFood[i]) > -1){
-    return true;
-  }else{
-    return false;
-  }
- }
+ // Meal.prototype.containsJunkFood = function(){
+ // var junkFood= ["chips", "soda", "ice cream", "popcorn", "candy"];
+ // for(var i = 0; i < junkFood.length; i++){
+ //  if(this.foods.indexOf(junkFood[i]) > -1){
+ //    return true;
+ //  }else{
+ //    return false;
+ //  }
+ // }
 
- };
+ // };
 
 
 /* Step 91
@@ -1668,5 +1668,18 @@ var cookieMonsterBlocked= new Cookie('gingerbread').swipedByCookieMonster('');
  * and assign the values to each variable below.
  *
  */
-var badForYou= new Meal('candy').containsJunkFood();
-var goodForYou=  new Meal('carrot').containsJunkFood();
+
+
+ Meal.prototype.containsJunkFood = function(){
+ var junkFood= ["chips", "soda", "ice cream", "popcorn", "candy"];
+ for(var i = 0; i < junkFood.length; i++){
+  if(this.foods.indexOf(junkFood[i]) > -1){
+    return true;
+  }
+ }
+  return false;
+
+ };
+
+var badForYou = new Meal('candy').containsJunkFood();
+var goodForYou =  new Meal('carrot').containsJunkFood();
